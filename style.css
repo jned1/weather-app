@@ -1,0 +1,104 @@
+/* General body styles */
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* Container styles */
+.container {
+  padding: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Input + button (search) */
+.search-box {
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #2193b0;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-box button:hover {
+  background: #e3f3f9;
+  transform: scale(1.05);
+}
+
+/* Weather container */
+.weather-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Weather box style with animation */
+.weather-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  width: 260px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.6s ease forwards;
+  opacity: 0; /* Initial state before animation */
+}
+
+/* On hover */
+.weather-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* Heading and paragraph */
+.weather-box h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.weather-box p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
